@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alok Rajput | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#081018;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background:rgba(8,16,24,0.9);
+      backdrop-filter:blur(12px);
+    }
+
+    nav h1{
+      font-size:32px;
+      color:#00d9ff;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#00d9ff;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 10%;
+      position:relative;
+    }
+
+    .hero-text{
+      width:55%;
+    }
+
+    .hero-text h3{
+      color:#00d9ff;
+      font-size:25px;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#b7c4d4;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:16px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+    }
+
+    .btn{
+      padding:14px 30px;
+      border-radius:40px;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .btn-primary{
+      background:#00d9ff;
+      color:black;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 20px #00d9ff;
+    }
+
+    .btn-secondary{
+      border:2px solid #00d9ff;
+      color:#00d9ff;
+    }
+
+    .btn-secondary:hover{
+      background:#00d9ff;
+      color:black;
+    }
+
+    .hero-image img{
+      width:350px;
+      height:350px;
+      object-fit:cover;
+      border-radius:50%;
+      border:5px solid #00d9ff;
+      box-shadow:0 0 40px #00d9ff50;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:70px;
+      color:#00d9ff;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      background:#111c2d;
+      padding:45px;
+      border-radius:25px;
+      line-height:1.9;
+      color:#c8d4e3;
+      font-size:16px;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#111c2d;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.4s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px #00d9ff30;
+    }
+
+    .skill-card i{
+      font-size:45px;
+      color:#00d9ff;
+      margin-bottom:20px;
+    }
+
+    .skill-card h3{
+      margin-bottom:15px;
+    }
+
+    .skill-card p{
+      color:#b7c4d4;
+      line-height:1.7;
+    }
+
+    /* PROJECTS */
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#111c2d;
+      border-radius:22px;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 35px #00d9ff25;
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      margin-bottom:15px;
+      color:#00d9ff;
+    }
+
+    .card-content p{
+      color:#b7c4d4;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .card-content a{
+      text-decoration:none;
+      color:#00d9ff;
+      font-weight:600;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+    }
+
+    .contact-info{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .contact-box{
+      background:#111c2d;
+      padding:25px;
+      border-radius:18px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .contact-box i{
+      font-size:28px;
+      color:#00d9ff;
+    }
+
+    .contact-form{
+      background:#111c2d;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:16px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:12px;
+      background:#1b2a42;
+      color:white;
+      font-size:15px;
+    }
+
+    .contact-form button{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:12px;
+      background:#00d9ff;
+      color:black;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .contact-form button:hover{
+      transform:translateY(-3px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#060d15;
+      color:#9eb0c4;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      nav ul{
+        display:none;
+      }
+
+      .hero{
+        flex-direction:column-reverse;
+        justify-content:center;
+        gap:60px;
+        text-align:center;
+        padding-top:120px;
+      }
+
+      .hero-text{
+        width:100%;
+      }
+
+      .hero-text h1{
+        font-size:50px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .contact-container{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <h1>Alok Rajput</h1>
+
+    <ul>
+
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#internships">Experience</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#contact">Contact</a></li>
+
+</ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h3>Hello, I'm</h3>
+
+      <h1>Alok Rajput</h1>
+
+      <p>
+        Electrical Engineer, Graduated from National Institute of Technology Silchar, Batch of 2026, passionate about Signal Processing and its real-time applications in intelligent engineering systems.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="cv.pdf" class="btn btn-primary">Download CV</a>
+
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="profile.jpg" alt="Profile">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+
+      <p>
+I am Alok Rajput from Kannauj, Uttar Pradesh. I completed my basic education in Kanpur, Uttar Pradesh, and graduated in Electrical Engineering from NIT Silchar in 2026.
+</p>
+
+<p>
+My interests lie in Signal Processing, Artificial Intelligence, Deep Learning, and Computer Vision, with a focus on building practical engineering solutions. During my academic journey, I explored both core electrical engineering systems and AI-driven technologies through research and project development.
+
+I interned at Panki Thermal Power Plant, Kanpur, where I gained exposure to industrial power systems and electrical operations. My curiosity toward AI and intelligent systems also led me to work on signal and audio processing projects with researchers from IIT Delhi and IIT Guwahati.
+</p>
+
+<p>
+For my final year thesis titled <i>“Studies on Underwater Image Enhancement and Object Detection Techniques for Maritime Surveillance”</i>,  I worked on underwater image enhancement and AI-based object detection for maritime applications. The work resulted in both conference and journal publications.
+</p>
+
+<p>
+I enjoy combining engineering fundamentals with computational intelligence to develop impactful real-world solutions.
+</p>
+    </div>
+
+  </section>
+ <!-- EXPERIENCE -->
+
+<section id="internships">
+
+  <h2 class="section-title">Experience</h2>
+
+  <div class="card-container">
+
+    <!-- INTERNSHIP 1 -->
+
+    <div class="card">
+
+      <img src="intern3.png" alt="IIT Guwahati">
+
+      <div class="card-content">
+
+        <h3>IIT Guwahati Project Intern</h3>
+
+        <p class="timeline">May – July 2025</p>
+
+        <p>
+          Developed BiGRU based speech mental state detection system
+          using deep learning and audio signal processing.
+        </p>
+
+        <a href="iitg.html">View More →</a>
+
+      </div>
+
+    </div>
+
+    <!-- INTERNSHIP 2 -->
+
+    <div class="card">
+
+      <img src="intern2.png" alt="IIT Delhi">
+
+      <div class="card-content">
+
+        <h3>IIT Delhi Research Intern</h3>
+
+        <p class="timeline">December 2024</p>
+
+        <p>
+          Worked on radar signal processing and micro-Doppler based
+          drone vs bird classification using AI techniques.
+        </p>
+
+        <a href="iitdelhi.html">View More →</a>
+
+      </div>
+
+    </div>
+
+    <!-- INTERNSHIP 3 -->
+
+    <div class="card">
+
+      <img src="intern1.png" alt="Panki Thermal Plant">
+
+      <div class="card-content">
+
+        <h3>Panki Thermal Power Plant</h3>
+
+        <p class="timeline">May – July 2024</p>
+
+        <p>
+          Worked on thermal power generation, switchyard operation,
+          and transmission system analysis at 660 MW Panki Extension.
+        </p>
+
+        <a href="panki.html">View More →</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  </section>
+  
+</section> <!-- PROJECTS --> <section id="projects"> <h2 class="section-title">Projects</h2> <div class="card-container"></div>
+  <!-- PROJECT CARD -->
+
+<div class="card">
+
+    <img src="project1.png" alt="Underwater Project">
+
+    <div class="card-content">
+
+        <h3>
+            Underwater Image Enhancement and Object Detection for Maritime Surveillance
+        </h3>
+
+        <p>
+            Developed Virtual Polarizer based underwater image enhancement
+            system integrated with enhanced YOLOv11 for improved maritime object
+            detection.
+        </p>
+
+        <a href="project-details.html">View Project →</a>
+
+    </div>
+
+</div>
+
+
+ 
+
+ </section>
+  
+
+ <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+
+        <i class="fa-solid fa-code"></i>
+
+        <h3>Programming</h3>
+
+        <p>Python, C++, SQL, JavaScript</p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <h3>AI / ML</h3>
+
+        <p>YOLOv11, OpenCV, TensorFlow, PyTorch, Deep Learning</p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <i class="fa-solid fa-microchip"></i>
+
+        <h3>Core Electrical</h3>
+
+        <p>Signal Processing, Power Systems, Control Systems</p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <h3>Tools</h3>
+
+        <p>MATLAB, Simulink, Power BI, Firebase, GitHub</p>
+
+      </div>
+
+    </div>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <h2 class="section-title">Contact Me</h2>
+
+  <div class="contact-container">
+
+    <!-- LEFT -->
+
+    <div class="contact-info">
+
+      <!-- EMAIL -->
+
+      <div class="contact-box">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        <div>
+
+          <h3>Email</h3>
+
+          <p>
+            <a href="mailto:alok.ok.work@gmail.com">
+              alok.ok.work@gmail.com
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- LINKEDIN -->
+
+      <div class="contact-box">
+
+        <i class="fa-brands fa-linkedin"></i>
+
+        <div>
+
+          <h3>LinkedIn</h3>
+
+          <p>
+            <a href="https://www.linkedin.com/in/alok-rajput-459b02270/" target="_blank">
+              linkedin.com/in/alok-rajput
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- GITHUB -->
+
+      <div class="contact-box">
+
+        <i class="fa-brands fa-github"></i>
+
+        <div>
+
+          <h3>GitHub</h3>
+
+          <p>
+            <a href="https://github.com/alok-rajput" target="_blank">
+              github.com/Nits266486
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <form class="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST">
+
+      <!-- WEB3FORMS ACCESS KEY -->
+
+      <input type="hidden"
+             name="access_key"
+             value="03a7da42-d362-4bce-9266-edbde18f43c0">
+
+      <!-- SUBJECT -->
+
+      <input type="hidden"
+             name="subject"
+             value="New Portfolio Message">
+
+      <!-- REDIRECT AFTER SUBMIT -->
+
+      <input type="hidden"
+             name="redirect"
+             value="https://web3forms.com/success">
+
+      <!-- NAME -->
+
+      <input type="text"
+             name="name"
+             placeholder="Your Name"
+             required>
+
+      <!-- EMAIL -->
+
+      <input type="email"
+             name="email"
+             placeholder="Your Email"
+             required>
+
+      <!-- MESSAGE -->
+
+      <textarea rows="6"
+                name="message"
+                placeholder="Your Message"
+                required></textarea>
+
+      <!-- BUTTON -->
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 Alok Rajput | Portfolio Website
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+  const sections = document.querySelectorAll("section");
+
+  window.addEventListener("scroll", () => {
+
+    sections.forEach(section => {
+
+      const top = window.scrollY;
+      const offset = section.offsetTop - 300;
+      const height = section.offsetHeight;
+
+      if(top >= offset && top < offset + height){
+
+        section.style.opacity = "1";
+        section.style.transform = "translateY(0px)";
+
+      }
+
+    });
+
+  });
+
+  sections.forEach(section => {
+
+    section.style.opacity = "0";
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "all 1s";
+
+  });
+
+</script>
+
+</body>
+</html>
